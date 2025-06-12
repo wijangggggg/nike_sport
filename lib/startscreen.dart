@@ -26,7 +26,7 @@ class StartPage extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    'START s',
+                    'START',
                     style: TextStyle(fontSize: 18, letterSpacing: 1),
                   ),
                 ),
