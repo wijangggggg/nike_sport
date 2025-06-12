@@ -11,7 +11,6 @@ class StartPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
- 
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: SizedBox(
@@ -27,11 +26,8 @@ class StartPage extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    'START',
-                    style: TextStyle(
-                      fontSize: 18,
-                      letterSpacing: 1,
-                    ),
+                    'START s',
+                    style: TextStyle(fontSize: 18, letterSpacing: 1),
                   ),
                 ),
               ),
