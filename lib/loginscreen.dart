@@ -21,99 +21,112 @@ class LoginScreen extends StatelessWidget {
 
           // Konten Login di atas background
           SafeArea(
-            child: Center(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Container(
-                    padding: const EdgeInsets.all(20.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.5),
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: Colors.grey),
-                    ),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        TextField(
-                          decoration: InputDecoration(
-                            labelText: 'Username',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8),
-                              borderSide: BorderSide.none,
-                            ),
-                            filled: true,
-                            fillColor: Colors.white,
-                          ),
-                        ),
-                        SizedBox(height: 16),
-                        TextField(
-                          decoration: InputDecoration(
-                            labelText: 'Password',
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8),
-                              borderSide: BorderSide.none,
-                            ),
-                            filled: true,
-                            fillColor: Colors.white,
-                          ),
-                          obscureText: true,
-                        ),
-                        SizedBox(height: 16),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 180,
+                  ), // <-- Tambahkan jarak agar Container lebih ke bawah
 
-                        // Tombol Login kecil di tengah
-                        Center(
-                          child: SizedBox(
-                            width: 150,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                // Ganti dengan navigasi ke HomePage jika login berhasil
-                                Navigator.pop(context);
-                              },
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.white,
-                                foregroundColor: Colors.black,
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 10,
-                                ),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
-                                ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Container(
+                      height: 345, // Tinggi kotak transparan
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 28.0,
+                        horizontal: 25.0,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.5),
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: Colors.grey),
+                      ),
+                      child: Column(
+                        mainAxisAlignment:
+                            MainAxisAlignment
+                                .center, // Isi kotak ditengah vertikal
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          // Username TextField
+                          TextField(
+                            decoration: InputDecoration(
+                              labelText: 'Masukkan Username',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide.none,
                               ),
-                              child: const Text('Login'),
+                              filled: true,
+                              fillColor: Colors.white,
                             ),
                           ),
-                        ),
+                          SizedBox(height: 10),
 
-                        SizedBox(height: 10),
-
-                        // Kalimat registrasi + tombol
-                        Column(
-                          children: [
-                            const Text(
-                              "Silahkan registrasi terlebih dahulu jika belum pernah login!",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(color: Colors.black),
+                          // Password TextField
+                          TextField(
+                            decoration: InputDecoration(
+                              labelText: 'Masukkan Password',
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: BorderSide.none,
+                              ),
+                              filled: true,
+                              fillColor: Colors.white,
                             ),
-                            TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder:
-                                        (context) => const registrasiscreen(),
+                            obscureText: true,
+                          ),
+                          SizedBox(height: 10),
+
+                          // Tombol Login di tengah
+                          Center(
+                            child: SizedBox(
+                              width: 150,
+                              height: 35,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.white,
+                                  foregroundColor: Colors.black,
+                                  padding: EdgeInsets.zero,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
                                   ),
-                                );
-                              },
-                              child: const Text('Registrasi'),
+                                ),
+                                child: const Text('Login'),
+                              ),
                             ),
-                          ],
-                        ),
-                      ],
+                          ),
+
+                          SizedBox(height: 5),
+
+                          // Kalimat registrasi + tombol
+                          Column(
+                            children: [
+                              const Text(
+                                "Silahkan registrasi terlebih dahulu jika belum pernah login!",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder:
+                                          (context) => const registrasiscreen(),
+                                    ),
+                                  );
+                                },
+                                child: const Text('Registrasi'),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
             ),
           ),
